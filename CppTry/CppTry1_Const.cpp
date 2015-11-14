@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 using namespace std;
-
 int main()
 {
 	int a = 100;
@@ -51,4 +50,3 @@ int main()
 	pp3 = &p1;//O
 	pp4 = &p1;//X
 }
-

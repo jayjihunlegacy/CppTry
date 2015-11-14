@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{84EF98BE-A28D-4E3F-828B-60D3F3049681}</ProjectGuid>
+    <ProjectGuid>{EF4DD6FA-56AC-4BC1-B52B-4972A965A885}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CppTry</RootNamespace>
+    <RootNamespace>CppTry2_Template</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>CppTry1_Const</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -147,7 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CppTry1_Const.cpp" />
+    <ClCompile Include="CppTry2_Template.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
