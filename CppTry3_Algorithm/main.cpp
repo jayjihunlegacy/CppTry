@@ -1,14 +1,14 @@
 #include <iostream>
 #include <stdio.h>
+#include <chrono>
+#include <ctime>
 
 using namespace std;
 
-
 #include "MaxSumSubsequence.h"
-
-
+#include "Sorting.h"
 
 int main()
 {
-	maxSum_Test(10000000);
+	sortingTest(100000);
 }
