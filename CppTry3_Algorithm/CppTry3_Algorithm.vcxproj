@@ -146,10 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="MaxSumSubsequence.h" />
+    <ClInclude Include="MinimumPointDistance.h" />
     <ClInclude Include="Ordering.h" />
     <ClInclude Include="Sorting.h" />
   </ItemGroup>

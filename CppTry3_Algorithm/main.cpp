@@ -7,8 +7,10 @@ using namespace std;
 
 #include "MaxSumSubsequence.h"
 #include "Sorting.h"
+#include "Heap.h"
+#include "MinimumPointDistance.h"
 
 int main()
 {
-	sortingTest(100000);
+	pointtest(10000);
 }
