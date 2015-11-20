@@ -12,5 +12,5 @@ using namespace std;
 
 int main()
 {
-	pointtest(10000);
+	heaptest();
 }

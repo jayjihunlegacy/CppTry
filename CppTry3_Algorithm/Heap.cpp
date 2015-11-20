@@ -32,10 +32,13 @@ void Heap::insert(int var)
 	arr[num++] = var;
 	while (1)
 	{
-		if (pt == 0)
+		if (pt == 1)
 			break;
 		if (arr[pt] < arr[parent(pt)])
+		{
 			swap(arr[pt], arr[parent(pt)]);
+			pt = parent(pt);
+		}
 		else
 			break;
 	}
@@ -64,4 +67,3 @@ int Heap::parent(int a)
 {
 	return a / 2;
 }
-
