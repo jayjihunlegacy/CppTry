@@ -11,7 +11,6 @@ void heaptest()
 	}
 }
 
-
 Heap::Heap(int s)
 {
 	arr = (int*)malloc(sizeof(int)*(s+1));
