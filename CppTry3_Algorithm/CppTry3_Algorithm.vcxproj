@@ -152,8 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Heap.h" />
     <ClInclude Include="MaxSumSubsequence.h" />
-    <ClInclude Include="MinimumPointDistance.h" />
-    <ClInclude Include="Ordering.h" />
+    <ClInclude Include="DynamicProgramming.h" />
     <ClInclude Include="Sorting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

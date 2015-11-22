@@ -6,11 +6,11 @@
 using namespace std;
 
 #include "MaxSumSubsequence.h"
-#include "Sorting.h"
-#include "Heap.h"
-#include "MinimumPointDistance.h"
+#include "DynamicProgramming.h"
+
+
 
 int main()
 {
-	heaptest();
+	cut_rod_test(100003210,3);
 }

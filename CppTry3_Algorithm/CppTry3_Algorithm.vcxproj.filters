@@ -21,13 +21,7 @@
     <ClInclude Include="Sorting.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Ordering.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Heap.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MinimumPointDistance.h">
+    <ClInclude Include="DynamicProgramming.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
