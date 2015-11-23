@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppTry2_Template", "CppTry2
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppTry3_Algorithm", "CppTry3_Algorithm\CppTry3_Algorithm.vcxproj", "{0EBBBF59-6DD6-4E83-BE17-20FAD2EEBD65}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppTry4_DataStructure", "CppTry4_DataStructure\CppTry4_DataStructure.vcxproj", "{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{0EBBBF59-6DD6-4E83-BE17-20FAD2EEBD65}.Release|x64.Build.0 = Release|x64
 		{0EBBBF59-6DD6-4E83-BE17-20FAD2EEBD65}.Release|x86.ActiveCfg = Release|Win32
 		{0EBBBF59-6DD6-4E83-BE17-20FAD2EEBD65}.Release|x86.Build.0 = Release|Win32
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Debug|x64.ActiveCfg = Debug|x64
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Debug|x64.Build.0 = Debug|x64
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Debug|x86.ActiveCfg = Debug|Win32
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Debug|x86.Build.0 = Debug|Win32
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Release|x64.ActiveCfg = Release|x64
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Release|x64.Build.0 = Release|x64
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Release|x86.ActiveCfg = Release|Win32
+		{B5BD6E2C-2A2E-41DF-9CCA-04F78B75D004}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
