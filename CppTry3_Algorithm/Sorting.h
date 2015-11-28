@@ -112,12 +112,25 @@ void quickSort(int* arr, int s, int e)
 }
 
 //5. count sort
-void countsort(int* &arr, int length, int k)
+void countSort(int* &arr, int length, int k)
 {
-	int *result = (int*)malloc(sizeof(int)*(k + 1));
-	memset(result, 0, sizeof(int));
+	int *count = (int*)malloc(sizeof(int)*(k + 1));
+	int *result = (int*)malloc(sizeof(int)*length);
+	memset(count, 0, sizeof(int)*(k+1));
 	for (int i = 0; i < length; i++)
-		result[arr[i]]++;
+		count[arr[i]]++;
+	for (int i = 1; i <= k; i++)
+		count[i] = count[i] + count[i - 1];
+	for (int i = length - 1; i >= 0; i--)
+		result[--count[arr[i]]] = arr[i];
+	memcpy(arr, result, sizeof(int)*length);
+	free(count);
+	free(result);
+}
+
+//6. radix sort
+void radixSort(int* arr, int length)
+{
 
 }
 
@@ -153,15 +166,18 @@ void sortingTest(int T)
 	Timer timer;
 	bool correct = false;
 
+	printf("n : %d\n",T);
+
 	
-	printf("1. AnswerSheet : started ..");
+	printf("Answer: started ..",T);
 	timer.start();
 	//do insertion Sort.	
-	qsort(answer, T, sizeof(int), cmp);
+	quickSort(answer, 0, T);
+	//qsort(answer, T, sizeof(int), cmp);
 	//end of insertion sort.
 	timer.end();
 	printf(" Time: %5.3fs\n", timer.get());
-
+	
 
 
 
@@ -169,18 +185,21 @@ void sortingTest(int T)
 
 	//1. insertion sort
 	memcpy(arr, orig, T*sizeof(int));
-	printf("1. Insertion sort : started ..");
-	timer.start();
-	//do insertion Sort.
-	insertionSort(arr, T);
-	//end of insertion sort.
-	timer.end();
-	correct = isCorrect(arr, answer, T);
-	printf(" Ans : %s, Time: %5.3fs\n", correct ?"true":"false", timer.get());
+	if (T <= 120000)
+	{
+		printf("1. Insertion \t: started ..");
+		timer.start();
+		//do insertion Sort.
+		insertionSort(arr, T);
+		//end of insertion sort.
+		timer.end();
+		correct = isCorrect(arr, answer, T);
+		printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
+	}
 
 	//2. merge sort
 	memcpy(arr, orig, T*sizeof(int));
-	printf("2. Merge sort : started ..");
+	printf("2. Merge \t: started ..");
 	timer.start();
 	//do insertion Sort.
 	mergeSort(arr, 0, T);
@@ -189,9 +208,10 @@ void sortingTest(int T)
 	correct = isCorrect(arr, answer, T);
 	printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
 
+	/*
 	//3. quick sort
 	memcpy(arr, orig, T*sizeof(int));
-	printf("3. Quick sort : started ..");
+	printf("3. Quick \t: started ..");
 	timer.start();
 	//do insertion Sort.
 	quickSort(arr, 0, T);
@@ -199,6 +219,22 @@ void sortingTest(int T)
 	timer.end();
 	correct = isCorrect(arr, answer, T);
 	printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
+	*/
+	//4. count sort
+	memcpy(arr, orig, T*sizeof(int));
+	printf("4. Count \t: started ..");
+	timer.start();
+	//do sort.
+	countSort(arr, T, boundary);
+	//end of sort.
+	timer.end();
+	correct = isCorrect(arr, answer, T);
+	printf(" Ans : %s, Tier: %5.3fs\n", correct ? "true" : "false", timer.get());
+
+	//5. radix sort
+
+
+
 
 	free(orig);
 	free(answer);
