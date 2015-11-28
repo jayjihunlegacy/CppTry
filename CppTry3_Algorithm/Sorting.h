@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <string>
 #include <stdlib.h>
-#include <chrono>
+#include "Timer.h"
+#include "RandGen.h"
 /*
 1. insertion sort
 2. bubble sort
@@ -110,6 +111,16 @@ void quickSort(int* arr, int s, int e)
 	quickSort(arr, p+1, e);
 }
 
+//5. count sort
+void countsort(int* &arr, int length, int k)
+{
+	int *result = (int*)malloc(sizeof(int)*(k + 1));
+	memset(result, 0, sizeof(int));
+	for (int i = 0; i < length; i++)
+		result[arr[i]]++;
+
+}
+
 bool isCorrect(int* a1, int* a2, int length)
 {
 	for (int i = 0; i < length; i++)
@@ -129,29 +140,27 @@ inline int cmp(const void* a1, const void* a2)
 void sortingTest(int T)
 {
 	srand(time(NULL));
-
+	int boundary = 50000;
 	//generate sample array and an answer sheet.
 	int * orig = (int*)malloc(T*sizeof(int));
 	int * answer = (int*)malloc(T*sizeof(int));
-	for (int i = 0; i < T; i++)
-		orig[i] = rand() % 50000;
+	arrayset(orig, T, 0, boundary);
 	memcpy(answer, orig, T*sizeof(int));
 	
 	int* arr = (int*)malloc(T*sizeof(int));
 
 	//prepare for time measurement
-	std::chrono::time_point<std::chrono::system_clock> start, end;
-	std::chrono::duration<double> elapsed_seconds;
+	Timer timer;
 	bool correct = false;
 
-	start = std::chrono::system_clock::now();
+	
 	printf("1. AnswerSheet : started ..");
-	//do insertion Sort.
+	timer.start();
+	//do insertion Sort.	
 	qsort(answer, T, sizeof(int), cmp);
 	//end of insertion sort.
-	end = std::chrono::system_clock::now();
-	elapsed_seconds = end - start;
-	printf(" Time: %fs\n", elapsed_seconds.count());
+	timer.end();
+	printf(" Time: %5.3fs\n", timer.get());
 
 
 
@@ -160,39 +169,38 @@ void sortingTest(int T)
 
 	//1. insertion sort
 	memcpy(arr, orig, T*sizeof(int));
-	start = std::chrono::system_clock::now();
 	printf("1. Insertion sort : started ..");
+	timer.start();
 	//do insertion Sort.
 	insertionSort(arr, T);
 	//end of insertion sort.
-	end = std::chrono::system_clock::now();
-	elapsed_seconds = end - start;
+	timer.end();
 	correct = isCorrect(arr, answer, T);
-	printf(" Ans : %s, Time: %fs\n", correct ?"true":"false", elapsed_seconds.count());
+	printf(" Ans : %s, Time: %5.3fs\n", correct ?"true":"false", timer.get());
 
 	//2. merge sort
 	memcpy(arr, orig, T*sizeof(int));
-	start = std::chrono::system_clock::now();
 	printf("2. Merge sort : started ..");
+	timer.start();
 	//do insertion Sort.
 	mergeSort(arr, 0, T);
 	//end of insertion sort.
-	end = std::chrono::system_clock::now();
-	elapsed_seconds = end - start;
+	timer.end();
 	correct = isCorrect(arr, answer, T);
-	printf(" Ans : %s, Time: %fs\n", correct ? "true" : "false", elapsed_seconds.count());
+	printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
 
 	//3. quick sort
 	memcpy(arr, orig, T*sizeof(int));
-	start = std::chrono::system_clock::now();
 	printf("3. Quick sort : started ..");
+	timer.start();
 	//do insertion Sort.
 	quickSort(arr, 0, T);
 	//end of insertion sort.
-	end = std::chrono::system_clock::now();
-	elapsed_seconds = end - start;
+	timer.end();
 	correct = isCorrect(arr, answer, T);
-	printf(" Ans : %s, Time: %fs\n", correct ? "true" : "false", elapsed_seconds.count());
+	printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
 
-
+	free(orig);
+	free(answer);
+	free(arr);
 }

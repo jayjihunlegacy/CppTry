@@ -21,7 +21,16 @@
     <ClInclude Include="Sorting.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="DynamicProgramming.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RandGen.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
