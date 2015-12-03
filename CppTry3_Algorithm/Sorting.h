@@ -131,7 +131,17 @@ void countSort(int* &arr, int length, int k)
 //6. radix sort
 void radixSort(int* arr, int length)
 {
+	int maxnum = INT_MIN;
+	for (int i = 0; i < length; i++)
+		maxnum = maxnum < arr[i] ? arr[i] : maxnum;
+	int maxd = 0;
+	for (maxd = 0; maxnum != 0;maxd++)
+		maxnum /= 10;
 
+	for (int d = 1; d <= maxd; d++)
+	{
+
+	}
 }
 
 bool isCorrect(int* a1, int* a2, int length)
@@ -208,18 +218,6 @@ void sortingTest(int T)
 	correct = isCorrect(arr, answer, T);
 	printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
 
-	/*
-	//3. quick sort
-	memcpy(arr, orig, T*sizeof(int));
-	printf("3. Quick \t: started ..");
-	timer.start();
-	//do insertion Sort.
-	quickSort(arr, 0, T);
-	//end of insertion sort.
-	timer.end();
-	correct = isCorrect(arr, answer, T);
-	printf(" Ans : %s, Time: %5.3fs\n", correct ? "true" : "false", timer.get());
-	*/
 	//4. count sort
 	memcpy(arr, orig, T*sizeof(int));
 	printf("4. Count \t: started ..");
@@ -232,8 +230,17 @@ void sortingTest(int T)
 	printf(" Ans : %s, Tier: %5.3fs\n", correct ? "true" : "false", timer.get());
 
 	//5. radix sort
+	memcpy(arr, orig, T*sizeof(int));
+	printf("5. Radix \t: started ..");
+	timer.start();
+	//do sort.
+	radixSort(arr, T);
+	//end of sort.
+	timer.end();
+	correct = isCorrect(arr, answer, T);
+	printf(" Ans : %s, Tier: %5.3fs\n", correct ? "true" : "false", timer.get());
 
-
+	//6. Heap sort
 
 
 	free(orig);

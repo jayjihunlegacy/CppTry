@@ -10,6 +10,5 @@ using namespace std;
 
 int main()
 {
-	for (int i = 100000; i < INT_MAX; i*=1.05)
-		sortingTest(i);
+	sortingTest(100);
 }
