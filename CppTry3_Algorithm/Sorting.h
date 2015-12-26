@@ -76,7 +76,7 @@ void mergeSort(int* arr, int s, int e)
 	free(leftTemp);
 }
 
-int partition(int* arr, int s, int e, int p)
+int Partition(int* arr, int s, int e, int p)
 {
 	if (e == s + 1)
 		return s;
@@ -106,7 +106,7 @@ void quickSort(int* arr, int s, int e)
 		return;
 
 	int p = (s + e) / 2;
-	p = partition(arr, s, e, p);
+	p = Partition(arr, s, e, p);
 	quickSort(arr, s, p);
 	quickSort(arr, p+1, e);
 }

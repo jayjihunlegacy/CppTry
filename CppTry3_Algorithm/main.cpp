@@ -1,14 +1,9 @@
-#include <iostream>
-#include <stdio.h>
-#include <chrono>
-#include <ctime>
 
+#include "BST.h"
 using namespace std;
-
-#include "Sorting.h"
 
 
 int main()
 {
-	sortingTest(100);
+	BST_Test();
 }

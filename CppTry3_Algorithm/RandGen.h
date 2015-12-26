@@ -2,9 +2,8 @@
 #include <ctime>
 #include <iostream>
 
-void arrayset(int* arr, int len, int low, int high)
-{
-	srand(time(NULL));
-	for (int i = 0; i < len; i++)
-		arr[i] = rand() % (high - low+1) + low;
-}
+void _swap(int&, int&);
+
+void arrayset(int* arr, int len, int low, int high);
+void shuffle(int* arr, int len, int num);
+void _swap(int& a, int& b);
