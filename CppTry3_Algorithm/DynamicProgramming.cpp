@@ -77,8 +77,8 @@ void cut_rod_test(int n, int key)
 		printf("%d\n", cut_rod_bottom(costs, n, 10));
 }
 
-
-
+//===============================================
+//Matrix Multiplication
 
 int matrix_chain_dynamic(int* arr, int n)
 {
@@ -154,7 +154,8 @@ void matrix_chain_test(int n)
 	free(arr);
 }
 
-
+//================================================
+//Longest Common Subsequence 
 
 int LCS_recur(int* arr1, int len1, int*arr2, int len2, int**answersheet)
 {
@@ -183,8 +184,6 @@ int LCS_Recurive(int* arr1, int len1, int*arr2, int len2)
 		memset(answersheet[i], -1, sizeof(int)*(len2 + 1));
 	}
 
-
-
 	for (int i = 0; i < len1 + 1; i++)
 		answersheet[i][0] = 0;
 	for (int j = 0;j < len2 + 1; j++)
@@ -193,7 +192,6 @@ int LCS_Recurive(int* arr1, int len1, int*arr2, int len2)
 	return LCS_recur(arr1, len1, arr2, len2, answersheet);
 }
 
-
 void LCS_Test()
 {
 	int arr1[4] = { 1,3,4,2 };
@@ -201,3 +199,7 @@ void LCS_Test()
 	int lcslen = LCS_Recurive(arr1, 4, arr2, 5);
 	printf("Length : %d\n", lcslen);
 }
+
+//================================================
+//Optimal Binary Search Tree
+

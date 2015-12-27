@@ -15,7 +15,6 @@ public:
 
 Node* INSERT(Node*, int, int h = 0);
 Node* FIND(Node*, int);
-
 void PRINT_INORDER(Node*);
 
 class BST

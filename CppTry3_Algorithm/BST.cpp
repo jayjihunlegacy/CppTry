@@ -107,10 +107,7 @@ void PRINT_INORDER(Node* tar)
 		printf("=");
 	printf("%d\n", tar->value);
 	PRINT_INORDER(tar->right);
-
 }
-
-
 
 BST* treeBuilder(int val)
 {

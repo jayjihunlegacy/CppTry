@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="BST.cpp" />
     <ClCompile Include="DynamicProgramming.cpp" />
+    <ClCompile Include="GreedyAlgorithms.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RandGen.cpp" />
@@ -157,6 +158,7 @@
   <ItemGroup>
     <ClInclude Include="BST.h" />
     <ClInclude Include="DynamicProgramming.h" />
+    <ClInclude Include="GreedyAlgorithms.h" />
     <ClInclude Include="Heap.h" />
     <ClInclude Include="MaxSumSubsequence.h" />
     <ClInclude Include="RandGen.h" />
